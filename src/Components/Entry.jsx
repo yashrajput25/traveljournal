@@ -1,25 +1,23 @@
 
-export default function Entry(){
+export default function Entry({country , placeName,locationLink,img, date, description}){
 
     return(
         <article className="journal-entry">
             <div className="main-image-container">
-                <img className="main-image" src="./media/mount_fuji.webp" alt="error" />
+                <img className="main-image" src={img.src} alt={img.alt} />
                 </div>
            
             <div className="text-container">
                 <div className="location-container"> 
                 <span className="country-location-text">
-                    <img className="location" src="./media/location.webp" alt="error" /> Japan
+                    <img className="location" src="./media/location.webp" alt="error" />
+                    {country}
                     </span>
-                <a href="https://maps.app.goo.gl/6DK8BpbrA7uGepzi9">View on Google Maps</a></div>
+                <a href={locationLink}>View on Google Maps</a></div>
                
-                <h2 >Mount Fuji</h2>
-                <p className="date">12 Jan, 2021 - 24 Jan, 2021</p> 
-                <p>Mount Fuji is the tallest mountain in Japan, 
-                    standing at 3,776 meters (12,380 feet). 
-                    Mount Fuji is the single most popular tourist site in Japan, 
-                    for both Japanese and foreign tourists.</p>
+                <h2 >{placeName}</h2>
+                <p className="date">{date}</p> 
+                <p>{description}</p>
             </div>
         </article>
     );
